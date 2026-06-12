@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Invited — All-American 250th 🎆</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Rye&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1437;
+    --navy-2: #131f4d;
+    --red: #c8102e;
+    --gold: #f5c542;
+    --cream: #fdf6e3;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    background: var(--navy);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(200,16,46,.18) 0%, transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(245,197,66,.14) 0%, transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(60,90,200,.22) 0%, transparent 50%);
+    color: var(--white);
+    min-height: 100vh;
+    padding: 24px 16px 64px;
+  }
+  /* twinkling stars */
+  .star {
+    position: fixed; width: 3px; height: 3px; border-radius: 50%;
+    background: var(--white); opacity: .5; pointer-events: none;
+    animation: twinkle 2.6s ease-in-out infinite;
+  }
+  @keyframes twinkle { 0%,100% { opacity:.15; transform:scale(1);} 50% { opacity:.85; transform:scale(1.5);} }
+
+  .wrap { max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .hero {
+    border-radius: 18px; overflow: hidden;
+    box-shadow: 0 0 0 3px var(--gold), 0 18px 50px rgba(0,0,0,.55);
+    margin-bottom: 28px; line-height: 0;
+  }
+  .hero img { width: 100%; height: auto; display: block; }
+
+  .banner { text-align: center; margin-bottom: 26px; }
+  .banner .kicker {
+    font-size: 12px; letter-spacing: .35em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 10px;
+  }
+  .banner h1 {
+    font-family: 'Rye', 'Montserrat', serif;
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.1; margin-bottom: 12px;
+    color: var(--white);
+    text-shadow: 0 3px 0 var(--red), 0 6px 18px rgba(0,0,0,.6);
+  }
+  .banner .deets {
+    font-weight: 700; font-size: 15px; line-height: 1.7; color: var(--cream);
+  }
+  .banner .deets .dot { color: var(--gold); padding: 0 6px; }
+
+  .card {
+    background: var(--navy-2);
+    border: 1px solid rgba(245,197,66,.35);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 14px 40px rgba(0,0,0,.45);
+  }
+  .greeting {
+    text-align: center; font-size: 20px; font-weight: 900;
+    margin-bottom: 4px; color: var(--gold); min-height: 26px;
+  }
+  .subgreeting { text-align: center; font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 22px; }
+
+  label { display: block; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); margin: 18px 0 8px; }
+
+  .toggle { display: flex; gap: 10px; }
+  .toggle button {
+    flex: 1; padding: 16px 8px; border-radius: 12px; cursor: pointer;
+    border: 2px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06);
+    color: var(--white); font-family: inherit; font-size: 16px; font-weight: 900;
+    transition: all .15s ease;
+  }
+  .toggle button:hover { border-color: var(--gold); }
+  .toggle button.sel-yes { background: var(--red); border-color: var(--gold); box-shadow: 0 0 18px rgba(200,16,46,.55); }
+  .toggle button.sel-no { background: rgba(255,255,255,.18); border-color: var(--white); }
+
+  input[type="number"], input[type="tel"], input[type="text"] {
+    width: 100%; padding: 14px; border-radius: 12px;
+    border: 2px solid rgba(255,255,255,.25); background: rgba(255,255,255,.07);
+    color: var(--white); font-family: inherit; font-size: 17px; font-weight: 700;
+  }
+  input:focus { outline: none; border-color: var(--gold); }
+  input::placeholder { color: rgba(255,255,255,.4); font-weight: 500; }
+
+  .hidden { display: none !important; }
+
+  .submit-btn {
+    width: 100%; margin-top: 26px; padding: 18px;
+    border: none; border-radius: 14px; cursor: pointer;
+    background: linear-gradient(180deg, #e2253f, var(--red));
+    color: var(--white); font-family: inherit; font-size: 18px; font-weight: 900;
+    letter-spacing: .06em; text-transform: uppercase;
+    box-shadow: 0 0 0 2px var(--gold), 0 10px 26px rgba(200,16,46,.5);
+    transition: transform .12s ease;
+  }
+  .submit-btn:hover:not(:disabled) { transform: translateY(-2px); }
+  .submit-btn:disabled { opacity: .55; cursor: wait; }
+
+  .error-msg { margin-top: 14px; text-align: center; font-size: 14px; font-weight: 700; color: #ff9aa8; }
+
+  .thanks { text-align: center; padding: 18px 4px; }
+  .thanks .big { font-size: 52px; margin-bottom: 14px; }
+  .thanks h2 { font-family: 'Rye', serif; font-size: 28px; color: var(--gold); margin-bottom: 14px; }
+  .thanks p { font-size: 16px; line-height: 1.65; color: var(--cream); font-weight: 500; }
+
+  .foot { text-align: center; margin-top: 30px; font-size: 12px; color: rgba(255,255,255,.45); letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="hero"><img src="fourth.jpg" alt="All-American 250th — Infinity Hospitality Group invite: a beaver in a Stars-and-Stripes top hat riding a bald eagle over Nashville fireworks" onerror="this.parentElement.style.display='none'"></div>
+
+  <div class="banner">
+    <div class="kicker">Infinity Hospitality Group presents</div>
+    <h1>The All-American 250th</h1>
+    <div class="deets">
+      Saturday, July 4th, 2026 <span class="dot">★</span> 7:00 PM<br>
+      The Bridge Building <span class="dot">★</span> Nashville, TN
+    </div>
+  </div>
+
+  <div class="card" id="card">
+    <!-- RSVP FORM STATE -->
+    <div id="formState">
+      <div class="greeting" id="greeting">You're invited! 🇺🇸</div>
+      <div class="subgreeting" id="subgreeting">Let us know if we'll see you there — takes 20 seconds.</div>
+
+      <!-- fallback name (shown only when no/invalid token) -->
+      <div id="nameWrap" class="hidden">
+        <label for="guestName">Your name</label>
+        <input type="text" id="guestName" placeholder="e.g. The Smith Family" autocomplete="name">
+      </div>
+
+      <label>Are you coming?</label>
+      <div class="toggle" id="attendToggle">
+        <button type="button" data-val="Yes">🎆 Heck yes</button>
+        <button type="button" data-val="No">Can't make it</button>
+      </div>
+
+      <div id="detailFields" class="hidden">
+        <label for="adults">Number of adults attending</label>
+        <input type="number" id="adults" min="1" max="20" inputmode="numeric" placeholder="2">
+
+        <label>Bringing kids?</label>
+        <div class="toggle" id="kidsToggle">
+          <button type="button" data-val="Yes">Yes</button>
+          <button type="button" data-val="No">No</button>
+        </div>
+
+        <div id="kidsCountWrap" class="hidden">
+          <label for="kids">How many kids?</label>
+          <input type="number" id="kids" min="1" max="20" inputmode="numeric" placeholder="2">
+        </div>
+
+        <label for="phone">Best number for day-of updates</label>
+        <input type="tel" id="phone" inputmode="tel" autocomplete="tel" placeholder="(615) 555-0123">
+      </div>
+
+      <button class="submit-btn hidden" id="submitBtn" type="button">Send RSVP 🦅</button>
+      <div class="error-msg hidden" id="errorMsg"></div>
+    </div>
+
+    <!-- THANK YOU STATE -->
+    <div id="thanksState" class="thanks hidden"></div>
+  </div>
+
+  <div class="foot">★ Infinity Hospitality Group ★</div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — paste your deployed Apps Script Web App URL here
+   ============================================================ */
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbypmsrW7oQFZ59oN5oqwu466z_3x-K5URuEpwjMF2UBGrbZ6qUu4YxDYH6RL0sRcnFC/exec';
+
+/* ---------- twinkling stars ---------- */
+(function () {
+  for (var i = 0; i < 40; i++) {
+    var s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.top = Math.random() * 100 + 'vh';
+    s.style.animationDelay = (Math.random() * 3) + 's';
+    document.body.appendChild(s);
+  }
+})();
+
+/* ---------- state ---------- */
+var token = new URLSearchParams(location.search).get('ref') || '';
+var guest = { name: '', known: false };
+var attending = '';
+var kidsComing = '';
+
+var $ = function (id) { return document.getElementById(id); };
+
+/* ---------- token lookup (silent) ---------- */
+if (token && SCRIPT_URL.indexOf('http') === 0) {
+  fetch(SCRIPT_URL + '?ref=' + encodeURIComponent(token))
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d && d.ok && d.name) {
+        guest.name = d.name;
+        guest.known = true;
+        $('greeting').textContent = 'Hey, ' + d.name + '! 🇺🇸';
+      } else {
+        showNameFallback();
+      }
+    })
+    .catch(showNameFallback);
+} else {
+  showNameFallback();
+}
+
+function showNameFallback() {
+  $('nameWrap').classList.remove('hidden');
+}
+
+/* ---------- toggle wiring ---------- */
+function wireToggle(containerId, onPick) {
+  var btns = $(containerId).querySelectorAll('button');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.remove('sel-yes', 'sel-no'); });
+      b.classList.add(b.dataset.val === 'Yes' ? 'sel-yes' : 'sel-no');
+      onPick(b.dataset.val);
+    });
+  });
+}
+
+wireToggle('attendToggle', function (val) {
+  attending = val;
+  $('detailFields').classList.toggle('hidden', val !== 'Yes');
+  $('submitBtn').classList.remove('hidden');
+});
+
+wireToggle('kidsToggle', function (val) {
+  kidsComing = val;
+  $('kidsCountWrap').classList.toggle('hidden', val !== 'Yes');
+});
+
+/* ---------- submit ---------- */
+$('submitBtn').addEventListener('click', function () {
+  var err = $('errorMsg');
+  err.classList.add('hidden');
+
+  if (!guest.known) {
+    var typed = $('guestName').value.trim();
+    if (!typed) { return showError('Mind telling us your name first?'); }
+    guest.name = typed;
+  }
+  if (!attending) { return showError('Let us know if you\'re coming!'); }
+
+  var adults = '', kids = '', phone = '';
+  if (attending === 'Yes') {
+    adults = $('adults').value.trim();
+    if (!adults || +adults < 1) { return showError('How many adults should we expect?'); }
+    if (kidsComing === 'Yes') {
+      kids = $('kids').value.trim();
+      if (!kids || +kids < 1) { return showError('How many kids are coming?'); }
+    }
+    phone = $('phone').value.trim();
+    if (!phone) { return showError('Drop a number so we can text day-of updates.'); }
+  }
+
+  var payload = {
+    token: token,
+    fallbackName: guest.known ? '' : guest.name,
+    attending: attending,
+    adults: adults,
+    kidsComing: attending === 'Yes' ? (kidsComing || 'No') : '',
+    kids: kids,
+    phone: phone
+  };
+
+  var btn = $('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d && d.ok) { showThanks(); }
+      else { throw new Error((d && d.error) || 'unknown'); }
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Send RSVP 🦅';
+      showError('Hmm, that didn\'t go through. Give it another try?');
+    });
+});
+
+function showError(msg) {
+  var err = $('errorMsg');
+  err.textContent = msg;
+  err.classList.remove('hidden');
+}
+
+function showThanks() {
+  $('formState').classList.add('hidden');
+  var t = $('thanksState');
+  if (attending === 'Yes') {
+    t.innerHTML = '<div class="big">🎆</div><h2>You\'re in!</h2>' +
+      '<p>See you at The Bridge Building,<br>July 4th at 7PM.<br><br>We\'ll text you if anything changes.</p>';
+  } else {
+    t.innerHTML = '<div class="big">🫡</div><h2>Thanks for letting us know</h2>' +
+      '<p>We\'ll miss you this year!</p>';
+  }
+  t.classList.remove('hidden');
+}
+</script>
+</body>
+</html>
