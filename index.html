@@ -63,6 +63,18 @@
   }
   .banner .deets .dot { color: var(--gold); padding: 0 6px; }
 
+  .info {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(245,197,66,.25);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 26px;
+  }
+  .info-row {
+    font-size: 14px; font-weight: 600; color: var(--cream);
+    line-height: 1.5; padding: 5px 0;
+  }
+
   .card {
     background: var(--navy-2);
     border: 1px solid rgba(245,197,66,.35);
@@ -130,16 +142,23 @@
     <div class="kicker">Infinity Hospitality Group presents</div>
     <h1>The All-American 250th</h1>
     <div class="deets">
-      Saturday, July 4th, 2026 <span class="dot">★</span> 7:00 PM<br>
+      Saturday, July 4th, 2026 <span class="dot">★</span> 7:00 PM til the fireworks are over<br>
       The Bridge Building <span class="dot">★</span> Nashville, TN
     </div>
+  </div>
+
+  <div class="info">
+    <div class="info-row">🍸 Open bar</div>
+    <div class="info-row">🧒 Children are welcome but must be supervised at all times</div>
+    <div class="info-row">🍔 Food menu &amp; parking details will be sent closer to the 4th</div>
+    <div class="info-row">🅿️ For planning purposes: parking will be on the stadium side of the river</div>
   </div>
 
   <div class="card" id="card">
     <!-- RSVP FORM STATE -->
     <div id="formState">
       <div class="greeting" id="greeting">You're invited! 🇺🇸</div>
-      <div class="subgreeting" id="subgreeting">Let us know if we'll see you there — takes 20 seconds.</div>
+      <div class="subgreeting" id="subgreeting">Let us know if we'll see you there!</div>
 
       <!-- fallback name (shown only when no/invalid token) -->
       <div id="nameWrap" class="hidden">
