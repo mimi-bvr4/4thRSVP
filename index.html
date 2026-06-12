@@ -83,10 +83,10 @@
     box-shadow: 0 14px 40px rgba(0,0,0,.45);
   }
   .greeting {
-    text-align: center; font-size: 20px; font-weight: 900;
-    margin-bottom: 4px; color: var(--gold); min-height: 26px;
+    text-align: center; font-size: 24px; font-weight: 900;
+    margin-bottom: 6px; color: var(--gold); min-height: 30px;
   }
-  .subgreeting { text-align: center; font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 22px; }
+  .subgreeting { text-align: center; font-size: 15px; color: rgba(255,255,255,.78); margin-bottom: 22px; }
 
   label { display: block; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--gold); margin: 18px 0 8px; }
 
@@ -147,6 +147,9 @@
     </div>
   </div>
 
+  <div class="greeting" id="greeting">You're invited! 🇺🇸</div>
+  <div class="subgreeting" id="subgreeting">Let us know if we'll see you there!</div>
+
   <div class="info">
     <div class="info-row">🍸 Open bar</div>
     <div class="info-row">🧒 Children are welcome but must be supervised at all times</div>
@@ -157,9 +160,6 @@
   <div class="card" id="card">
     <!-- RSVP FORM STATE -->
     <div id="formState">
-      <div class="greeting" id="greeting">You're invited! 🇺🇸</div>
-      <div class="subgreeting" id="subgreeting">Let us know if we'll see you there!</div>
-
       <!-- fallback name (shown only when no/invalid token) -->
       <div id="nameWrap" class="hidden">
         <label for="guestName">Your name</label>
