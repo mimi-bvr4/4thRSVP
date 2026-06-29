@@ -80,8 +80,24 @@
   }
   .info-row {
     font-size: 14px; font-weight: 600; color: var(--cream);
-    line-height: 1.5; padding: 5px 0;
+    line-height: 1.5; padding: 7px 0;
+    border-bottom: 1px solid rgba(245,197,66,.12);
   }
+  .info-row:last-child { border-bottom: none; }
+  .info-row strong { color: var(--gold); }
+  .info-row .route { display: inline-block; margin-top: 4px; font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,.6); }
+
+  .heads-up {
+    background: rgba(200,16,46,.16);
+    border: 1px solid var(--red);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--cream);
+  }
+  .heads-up strong { color: var(--gold); }
 
   .card {
     background: var(--navy-2);
@@ -150,7 +166,7 @@
       align-items: start;
     }
     .hero { grid-column: 1; grid-row: 1 / span 6; position: sticky; top: 24px; margin-bottom: 0; }
-    .banner, .greeting, .subgreeting, .info, .card, .foot { grid-column: 2; }
+    .banner, .greeting, .subgreeting, .heads-up, .info, .card, .foot { grid-column: 2; }
     .banner { margin-bottom: 16px; }
     .banner .kicker { font-size: 11px; margin-bottom: 6px; }
     .banner h1 { font-size: 32px; margin-bottom: 8px; }
@@ -184,6 +200,10 @@
 
   <div class="greeting" id="greeting">You're invited! 🇺🇸</div>
   <div class="subgreeting" id="subgreeting">Let us know if we'll see you there!</div>
+
+  <div class="heads-up">
+    <strong>⏱️ Before you RSVP — one important thing:</strong> The Bridge Building is inside the secured zone for Nashville's fireworks. You must be downtown and <strong>inside the building before 8:00 PM</strong>, and everyone stays inside once the site locks down. Full details below. ⬇️
+  </div>
 
   <div class="card" id="card">
     <!-- RSVP FORM STATE -->
@@ -228,10 +248,11 @@
   </div>
 
   <div class="info">
-    <div class="info-row">🍸 Open bar</div>
-    <div class="info-row">🧒 Children are welcome but must be supervised at all times</div>
-    <div class="info-row">🍔 Food menu &amp; parking details will be sent closer to the 4th</div>
-    <div class="info-row">🅿️ For planning purposes: parking will be on the stadium side of the river</div>
+    <div class="info-row"><strong>⏱️ Arrive before 8:00 PM.</strong> The Bridge Building sits in the official fall zone for Nashville's fireworks. At 8:00 PM the fire marshal secures the site — and that includes us. If you're not inside by 8:00, you won't be able to get in.</div>
+    <div class="info-row"><strong>🍖 Dinner</strong> by Martin's Bar-B-Que Joint. Open bar all night.</div>
+    <div class="info-row"><strong>🚌 Parking</strong> in the gated lot under the Korean Veterans Bridge — an attendant will direct you. From the lot, walk down the riverfront to the building.<br><span class="route">From I-65: Shelby Street exit → S. 5th Street → right on Davidson Street → gated lot directly under the bridge on your left.</span></div>
+    <div class="info-row"><strong>🔒 Stay inside</strong> once the site locks down — no stepping out during the show. We've got the best seats in the house right where we are.</div>
+    <div class="info-row"><strong>🧒 Kids welcome</strong>, supervised at all times.</div>
   </div>
 
   <div class="foot">★ Infinity Hospitality Group ★</div>
