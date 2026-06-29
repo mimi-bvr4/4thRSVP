@@ -48,8 +48,8 @@
   var VENUE = [36.16285, -86.77160];   // The Bridge Building (foot of pedestrian bridge)
   var PARK  = [36.16130, -86.76955];   // gated lot under Korean Veterans Blvd Bridge
 
-  var map = L.map('map', { zoomControl:false, attributionControl:true, scrollWheelZoom:false })
-    .setView([36.16210, -86.77040], 16);
+  var map = L.map('map', { zoomControl:false, attributionControl:true, scrollWheelZoom:false, zoomSnap:0.25 })
+    .setView([36.16205, -86.76930], 17.5);
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19, crossOrigin: 'anonymous',
